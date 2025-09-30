@@ -1,0 +1,259 @@
+/* MusicGate Membership Styles */
+@import url("https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --mgm-bg: #14182a;
+  --mgm-accent: #3bc8e7;
+  --mgm-text: #ffffff;
+  --mgm-border-radius: 12px;
+}
+
+.mgm-subscription-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  font-family: "Vazir", sans-serif;
+  direction: rtl;
+}
+
+.mgm-subscription-card {
+  background: linear-gradient(135deg, var(--mgm-bg) 0%, #1a1f35 100%);
+  border: 2px solid rgba(59, 200, 231, 0.2);
+  border-radius: var(--mgm-border-radius);
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--mgm-text);
+  position: relative;
+  min-width: 250px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.mgm-subscription-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--mgm-accent);
+  box-shadow: 0 12px 40px rgba(59, 200, 231, 0.2);
+}
+
+.mgm-subscription-card.mgm-popular {
+  border-color: var(--mgm-accent);
+  background: linear-gradient(135deg, var(--mgm-bg) 0%, #1a1f35 50%, rgba(59, 200, 231, 0.1) 100%);
+}
+
+.mgm-popular-badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--mgm-accent), #2ea3c7);
+  color: var(--mgm-bg);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mgm-subscription-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: var(--mgm-text);
+}
+
+.mgm-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--mgm-accent);
+  margin: 15px 0;
+}
+
+.mgm-discount {
+  background: rgba(59, 200, 231, 0.2);
+  color: var(--mgm-accent);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.mgm-subscribe-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--mgm-accent), #2ea3c7);
+  color: var(--mgm-text);
+  padding: 12px 30px;
+  border-radius: var(--mgm-border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.mgm-subscribe-btn:hover {
+  background: linear-gradient(135deg, #2ea3c7, var(--mgm-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 200, 231, 0.3);
+  color: var(--mgm-text);
+  text-decoration: none;
+}
+
+/* Content Overlay */
+#mgm-content-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(20, 24, 42, 0.95), rgba(20, 24, 42, 0.7));
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mgm-overlay-content {
+  text-align: center;
+  color: var(--mgm-text);
+  font-family: "Vazir", sans-serif;
+  direction: rtl;
+}
+
+.mgm-overlay-content p {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+
+.mgm-overlay-link img {
+  max-width: 200px;
+  border-radius: var(--mgm-border-radius);
+  transition: transform 0.3s ease;
+}
+
+.mgm-overlay-link:hover img {
+  transform: scale(1.05);
+}
+
+/* User Dashboard */
+.mgm-user-dashboard {
+  background: linear-gradient(135deg, var(--mgm-bg) 0%, #1a1f35 100%);
+  border-radius: var(--mgm-border-radius);
+  padding: 30px;
+  color: var(--mgm-text);
+  font-family: "Vazir", sans-serif;
+  direction: rtl;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+}
+
+.mgm-dashboard-header h3 {
+  color: var(--mgm-accent);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.mgm-dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .mgm-dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .mgm-subscription-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.mgm-user-info h4,
+.mgm-profile-edit h4 {
+  color: var(--mgm-accent);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  border-bottom: 2px solid rgba(59, 200, 231, 0.3);
+  padding-bottom: 10px;
+}
+
+.mgm-subscription-info {
+  background: rgba(59, 200, 231, 0.1);
+  padding: 20px;
+  border-radius: var(--mgm-border-radius);
+  margin: 15px 0;
+  border: 1px solid rgba(59, 200, 231, 0.3);
+}
+
+.mgm-remaining-days {
+  color: var(--mgm-accent);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.mgm-no-subscription {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: var(--mgm-border-radius);
+  text-align: center;
+  margin: 15px 0;
+}
+
+.mgm-profile-edit form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: var(--mgm-border-radius);
+}
+
+.mgm-profile-edit label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--mgm-text);
+}
+
+.mgm-profile-edit input[type="text"],
+.mgm-profile-edit input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(59, 200, 231, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--mgm-text);
+  font-family: "Vazir", sans-serif;
+  font-size: 14px;
+}
+
+.mgm-profile-edit input[type="text"]:focus,
+.mgm-profile-edit input[type="password"]:focus {
+  outline: none;
+  border-color: var(--mgm-accent);
+  box-shadow: 0 0 10px rgba(59, 200, 231, 0.3);
+}
+
+.mgm-update-btn {
+  background: linear-gradient(135deg, var(--mgm-accent), #2ea3c7);
+  color: var(--mgm-text);
+  padding: 10px 25px;
+  border: none;
+  border-radius: var(--mgm-border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Vazir", sans-serif;
+}
+
+.mgm-update-btn:hover {
+  background: linear-gradient(135deg, #2ea3c7, var(--mgm-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 200, 231, 0.3);
+}

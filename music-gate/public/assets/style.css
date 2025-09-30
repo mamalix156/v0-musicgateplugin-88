@@ -1,0 +1,850 @@
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css");
+
+/* Base styles with Vazir font */
+.mg-popup-overlay,
+.mg-dropdown,
+.mg-form,
+.mg-btn,
+.mg-overlay-content,
+.mg-overlay-inner {
+  font-family: "Vazir", Arial, sans-serif !important;
+  direction: rtl;
+  text-align: right;
+}
+
+/* New overlay system with gradient using #14182A */
+.mg-content-overlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  pointer-events: auto;
+  display: block;
+  transition: top 300ms ease, height 300ms ease, opacity 200ms ease;
+  background: linear-gradient(to bottom, rgba(20, 24, 42, 0) 0%, rgba(20, 24, 42, 0.5) 50%, rgba(20, 24, 42, 0.95) 100%);
+}
+
+/* Inner overlay content with pointer events control */
+.mg-overlay-inner {
+  pointer-events: none;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Enable pointer events for CTA elements */
+.mg-overlay-inner .mg-cta,
+.mg-overlay-inner a,
+.mg-overlay-inner button {
+  pointer-events: auto;
+}
+
+.mg-overlay-inner h3 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.mg-overlay-inner p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.mg-overlay-inner .mg-cta {
+  background: linear-gradient(135deg, #3bc8e7, #2a9fd7);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mg-overlay-inner .mg-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 200, 231, 0.4);
+}
+
+/* Centered modal base styles with rounded corners */
+.mg-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100000;
+  align-items: center;
+  justify-content: center;
+}
+
+.mg-modal {
+  background: #0f1720;
+  color: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  width: 100%;
+  max-width: 720px;
+  box-shadow: 0 10px 30px rgba(11, 20, 28, 0.6);
+}
+
+/* Circular progress indicator for remaining days */
+.mg-circle-progress {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(#3bc8e7 var(--pct), rgba(255, 255, 255, 0.08) 0);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 10px auto;
+}
+
+.mg-sub-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Improved content overlay with fixed positioning and proper height coverage */
+#mg-content-overlay {
+  background: linear-gradient(180deg, transparent 0%, rgba(20, 24, 42, 0.95) 20%, rgba(20, 24, 42, 1) 100%);
+  backdrop-filter: blur(10px);
+  pointer-events: all;
+  cursor: not-allowed;
+  position: fixed !important;
+  z-index: 999999 !important;
+}
+
+.mg-overlay-content {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 24, 42, 0.98);
+  border: 2px solid #3bc8e7;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(59, 200, 231, 0.3);
+}
+
+.mg-overlay-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px #3bc8e7);
+}
+
+.mg-overlay-content h3 {
+  color: #3bc8e7;
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mg-overlay-content p {
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+/* User dropdown styles */
+#mg-user-dropdown {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(20, 24, 42, 0.95);
+  border: 2px solid #3bc8e7;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  min-width: 250px;
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(59, 200, 231, 0.2);
+}
+
+.mg-dropdown-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #3bc8e7;
+}
+
+.mg-user-name {
+  font-weight: bold;
+  color: #3bc8e7;
+}
+
+.mg-subscription-circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.mg-circle-bg {
+  fill: none;
+  stroke: rgba(59, 200, 231, 0.2);
+  stroke-width: 2;
+}
+
+.mg-circle-progress-bar {
+  fill: none;
+  stroke: #3bc8e7;
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.mg-circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: bold;
+  color: #3bc8e7;
+}
+
+.mg-dropdown-menu a {
+  display: block;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(59, 200, 231, 0.1);
+  transition: color 0.3s ease;
+}
+
+.mg-dropdown-menu a:hover {
+  color: #3bc8e7;
+}
+
+.mg-no-subscription {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+}
+
+.mg-get-subscription,
+.mg-purchase-link {
+  background: linear-gradient(135deg, #3bc8e7, #2a9fd7);
+  color: white !important;
+  padding: 10px 15px !important;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Popup styles */
+.mg-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  backdrop-filter: blur(5px);
+}
+
+.mg-popup-content {
+  background: #14182a;
+  border: 2px solid #3bc8e7;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(59, 200, 231, 0.3);
+}
+
+.mg-popup-close {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  color: #3bc8e7;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(59, 200, 231, 0.1);
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.mg-popup-close:hover {
+  background: rgba(59, 200, 231, 0.2);
+}
+
+.mg-popup-header h3 {
+  color: #3bc8e7;
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.mg-popup-body {
+  color: white;
+}
+
+/* Form styles */
+.mg-form-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #3bc8e7;
+}
+
+.mg-tab,
+.mg-tab-btn {
+  flex: 1;
+  padding: 15px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-family: "Vazir", Arial, sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.mg-tab.active,
+.mg-tab-btn.active {
+  color: #3bc8e7;
+  border-bottom: 2px solid #3bc8e7;
+}
+
+.mg-tab-content {
+  display: none;
+}
+
+.mg-tab-content.active {
+  display: block;
+}
+
+.mg-form-group {
+  margin-bottom: 20px;
+}
+
+.mg-form-group label {
+  display: block;
+  color: white;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.mg-form-group input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(59, 200, 231, 0.3);
+  border-radius: 10px;
+  color: white !important;
+  font-family: "Vazir", Arial, sans-serif;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.mg-form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.mg-form-group input:focus {
+  outline: none;
+  border-color: #3bc8e7;
+  box-shadow: 0 0 10px rgba(59, 200, 231, 0.3);
+}
+
+.mg-form-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+}
+
+.mg-form-message.success {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+  border: 1px solid #4caf50;
+  display: block;
+}
+
+.mg-form-message.error {
+  background: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+  border: 1px solid #f44336;
+  display: block;
+}
+
+/* Button styles */
+.mg-btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Vazir", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.mg-btn-primary {
+  background: linear-gradient(135deg, #3bc8e7, #2a9fd7);
+  color: white;
+}
+
+.mg-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 200, 231, 0.4);
+}
+
+.mg-btn-full {
+  width: 100%;
+}
+
+.mg-btn-outline {
+  background: transparent;
+  border: 2px solid #3bc8e7;
+  color: #3bc8e7;
+}
+
+.mg-btn-outline:hover {
+  background: #3bc8e7;
+  color: white;
+}
+
+.mg-btn-minimal {
+  background: transparent;
+  color: white;
+  padding: 10px 20px;
+}
+
+.mg-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Enhanced subscription plans layout with better card design and image support */
+.mg-subscription-popup {
+  color: white;
+}
+
+.mg-subscription-plans {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(59, 200, 231, 0.3);
+}
+
+.mg-subscription-plans h4 {
+  color: #3bc8e7;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mg-plans-container,
+.mg-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 25px 0;
+}
+
+.mg-plan-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(59, 200, 231, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.mg-plan-card:hover {
+  border-color: #3bc8e7;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(59, 200, 231, 0.2);
+}
+
+.mg-plan-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #3bc8e7, #2a9fd7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mg-plan-card:hover::before {
+  opacity: 1;
+}
+
+.mg-plan-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #3bc8e7, #2a9fd7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+  overflow: hidden;
+}
+
+.mg-plan-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mg-plan-content h4,
+.mg-plan-card h3,
+.mg-plan-card h5 {
+  color: #3bc8e7;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+}
+
+.mg-plan-price {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.mg-plan-price span {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mg-plan-duration,
+.mg-plan-features {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.mg-plan-card .mg-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Added loading spinner styles for better user feedback */
+.mg-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(59, 200, 231, 0.3);
+  border-top: 4px solid #3bc8e7;
+  border-radius: 50%;
+  animation: mg-spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+/* Welcome popup */
+.mg-welcome-popup {
+  text-align: center;
+}
+
+.mg-welcome-content {
+  color: white;
+}
+
+.mg-welcome-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px #3bc8e7);
+}
+
+.mg-welcome-content h2 {
+  color: #3bc8e7;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.mg-welcome-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* User dropdown trigger */
+.mg-user-dropdown-trigger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #3bc8e7, #2a9fd7);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Vazir", Arial, sans-serif;
+  font-weight: bold;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(59, 200, 231, 0.3);
+}
+
+.mg-user-dropdown-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 200, 231, 0.4);
+}
+
+.mg-show-register-popup,
+.mg-show-subscription-popup,
+.mg-show-plans,
+.mg-purchase-plan,
+.mg-select-plan,
+.mg-subscribe-trigger {
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.mg-user-dropdown {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mg-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mg-dropdown-arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.mg-user-dropdown.open .mg-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.mg-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background: rgba(20, 24, 42, 0.98);
+  border: 2px solid #3bc8e7;
+  border-radius: 15px;
+  padding: 15px;
+  min-width: 250px;
+  z-index: 10000;
+  box-shadow: 0 10px 30px rgba(59, 200, 231, 0.3);
+}
+
+.mg-user-dropdown.open .mg-dropdown-menu {
+  display: block;
+}
+
+.mg-dropdown-item {
+  display: block;
+  padding: 12px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.mg-dropdown-item:hover {
+  background: rgba(59, 200, 231, 0.1);
+  color: #3bc8e7;
+}
+
+.mg-subscription-progress {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.mg-circular-progress {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.mg-progress-ring {
+  transform: rotate(-90deg);
+}
+
+.mg-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #3bc8e7;
+}
+
+.mg-subscription-status {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 5px 0;
+}
+
+/* Improved responsive design for mobile devices */
+@media (max-width: 768px) {
+  .mg-popup-content {
+    width: 95%;
+    padding: 20px;
+    max-width: none;
+  }
+
+  .mg-plans-container,
+  .mg-plans-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .mg-plan-card {
+    padding: 25px 20px;
+  }
+
+  .mg-plan-image {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
+
+  #mg-user-dropdown {
+    right: 10px;
+    top: 10px;
+    min-width: 200px;
+  }
+
+  .mg-user-dropdown-trigger {
+    right: 10px;
+    top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .mg-overlay-content,
+  .mg-overlay-inner {
+    max-width: 300px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mg-popup-content {
+    width: 98%;
+    padding: 15px;
+  }
+
+  .mg-plan-card {
+    padding: 20px 15px;
+  }
+
+  .mg-plan-price {
+    font-size: 24px;
+  }
+}
+
+/* Loading animation */
+.mg-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(59, 200, 231, 0.3);
+  border-radius: 50%;
+  border-top-color: #3bc8e7;
+  animation: mg-spin 1s ease-in-out infinite;
+}
+
+@keyframes mg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Status indicators */
+.mg-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.mg-status-active {
+  background: #4caf50;
+  color: white;
+}
+
+.mg-status-expired {
+  background: #f44336;
+  color: white;
+}
+
+.mg-status-inactive {
+  background: #9e9e9e;
+  color: white;
+}
+
+.mg-status-pending {
+  background: #ff9800;
+  color: white;
+}
+
+.mg-status-completed {
+  background: #4caf50;
+  color: white;
+}
+
+.mg-status-failed {
+  background: #f44336;
+  color: white;
+}
+
+.mg-status-cancelled {
+  background: #9e9e9e;
+  color: white;
+}

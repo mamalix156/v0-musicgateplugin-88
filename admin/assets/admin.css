@@ -1,0 +1,57 @@
+/* Music Gate Admin Styles */
+.mg-admin-table {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.mg-admin-table th,
+.mg-admin-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.mg-admin-table th {
+  background: #f9f9f9;
+  font-weight: 600;
+}
+
+.mg-status-active {
+  color: #46b450;
+  font-weight: 600;
+}
+
+.mg-status-expired {
+  color: #dc3232;
+  font-weight: 600;
+}
+
+.mg-status-pending {
+  color: #ffb900;
+  font-weight: 600;
+}
+
+.mg-admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.mg-admin-btn {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.mg-admin-btn-primary {
+  background: #0073aa;
+  color: #fff;
+}
+
+.mg-admin-btn-danger {
+  background: #dc3232;
+  color: #fff;
+}
